@@ -1,3 +1,22 @@
+/**
+* \file position_service.cpp
+* \brief This file is the position_service node
+* \author Lorenzo Causa
+* \version 1.0
+* \date 28/05/2021
+*
+* \details
+* 
+*
+* Services : <BR>
+*    °/position_server
+*
+* Description :
+*
+* This node compute the random targets
+*
+*/
+
 #include "ros/ros.h"
 #include "rt2_assignment1/RandomPosition.h"
 

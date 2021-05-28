@@ -1,5 +1,24 @@
 #! /usr/bin/env python
 
+## @package rt2_assignment1
+#   \file go_to_point.py
+#   \brief This node implement the go_to_point action
+#   \author lorenzo Causa
+#   \version 1.0
+#   \date 28/05/2021
+#
+#   \details
+#
+#   Subscribes to: <BR>
+#        /odom
+#
+#   Publishes to: <BR>
+#        /cmd_vel
+#
+#   Actions : <BR>
+#        /go_to_point
+#       
+
 
 import rospy
 from geometry_msgs.msg import Twist, Point

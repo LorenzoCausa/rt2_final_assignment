@@ -1,3 +1,28 @@
+/**
+* \file state_machine.cpp
+* \brief This file is the state_machine node
+* \author Lorenzo Causa
+* \version 1.0
+* \date 28/05/2021
+*
+* \details
+* 
+*
+* Services : <BR>
+*    °/user_interface
+*
+* Clients : <BR>
+*   °/position_server
+*
+* ActionClients : <BR>
+*    °/go_to_point
+*
+* Description :
+*
+* This node asks for the random target,calls the go_to_point action and receive command from the user interface
+*
+*/
+
 #include "ros/ros.h"
 #include "rt2_assignment1/Command.h"
 #include "rt2_assignment1/Position.h"
@@ -6,9 +31,8 @@
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
 
-bool start = false;
-   
 
+bool start = false;
 bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Command::Response &res){
     if (req.command == "start"){
     	start = true;
