@@ -47,6 +47,8 @@ kp_d = 0.2
 ub_a = 0.6
 lb_a = -0.5
 ub_d = 0.6
+lin_vel = 0.3
+ang_vel = 0.5
 
 #action server
 act_s = None
@@ -67,6 +69,13 @@ def clbk_odom(msg):
     euler = transformations.euler_from_quaternion(quaternion)
     yaw_ = euler[2]
 
+    
+def clbk_vel(msg):
+    global lin_vel,ang_vel
+    lin_vel=msg.linear.x
+    ang_vel=msg.angular.z
+
+
 def change_state(state):
     global state_
     state_ = state
@@ -83,11 +92,11 @@ def fix_yaw(des_pos):
     rospy.loginfo(err_yaw)
     twist_msg = Twist()
     if math.fabs(err_yaw) > yaw_precision_2_:
-        twist_msg.angular.z = kp_a*err_yaw
-        if twist_msg.angular.z > ub_a:
-            twist_msg.angular.z = ub_a
-        elif twist_msg.angular.z < lb_a:
-            twist_msg.angular.z = lb_a
+        twist_msg.angular.z = -5*ang_vel*err_yaw
+        if twist_msg.angular.z > ang_vel:
+            twist_msg.angular.z = ang_vel
+        elif twist_msg.angular.z < -ang_vel:
+            twist_msg.angular.z = -ang_vel
     pub_.publish(twist_msg)
     # state change conditions
     if math.fabs(err_yaw) <= yaw_precision_2_:
@@ -104,11 +113,11 @@ def go_straight_ahead(des_pos):
 
     if err_pos > dist_precision_:
         twist_msg = Twist()
-        twist_msg.linear.x = 0.3
-        if twist_msg.linear.x > ub_d:
-            twist_msg.linear.x = ub_d
+        twist_msg.linear.x = lin_vel
+        #if twist_msg.linear.x > ub_d:
+        #    twist_msg.linear.x = ub_d
 
-        twist_msg.angular.z = kp_a*err_yaw
+        twist_msg.angular.z = -5*ang_vel*err_yaw
         pub_.publish(twist_msg)
     else: # state change conditions
         #print ('Position error: [%s]' % err_pos)
@@ -124,11 +133,11 @@ def fix_final_yaw(des_yaw):
     rospy.loginfo(err_yaw)
     twist_msg = Twist()
     if math.fabs(err_yaw) > yaw_precision_2_:
-        twist_msg.angular.z = kp_a*err_yaw
-        if twist_msg.angular.z > ub_a:
-            twist_msg.angular.z = ub_a
-        elif twist_msg.angular.z < lb_a:
-            twist_msg.angular.z = lb_a
+        twist_msg.angular.z = -5*ang_vel*err_yaw
+        if twist_msg.angular.z > ang_vel:
+            twist_msg.angular.z = ang_vel
+        elif twist_msg.angular.z < -ang_vel:
+            twist_msg.angular.z = -ang_vel
     pub_.publish(twist_msg)
     # state change conditions
     if math.fabs(err_yaw) <= yaw_precision_2_:
@@ -184,12 +193,12 @@ def go_to_point(goal):
             act_s.publish_feedback(feedback)
             act_s.set_preempted()
             twist_msg = Twist()
-            twist_msg.linear.x=0
-            twist_msg.angular.z=0
+            twist_msg.linear.x = 0
+            twist_msg.angular.z = 0
             pub_.publish(twist_msg)
             success = False
-              
             break
+
         elif state_ == 0:
             feedback.stat = "fixing start yaw"
             feedback.x = position_.x
@@ -229,6 +238,7 @@ def main():
     rospy.init_node('go_to_point')
     pub_ = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
     sub_odom = rospy.Subscriber('/odom', Odometry, clbk_odom)
+    sub_velocities = rospy.Subscriber('/velocities', Twist, clbk_vel)
     act_s = actionlib.SimpleActionServer('/go_to_point', rt2_assignment1.msg.go_to_pointAction, go_to_point, auto_start=False) #action server
     act_s.start()
     rospy.spin()
