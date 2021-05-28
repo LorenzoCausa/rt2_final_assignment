@@ -1,0 +1,25 @@
+A\+C\+T\+I\+ON B\+R\+A\+N\+CH
+
+The package contains the nodes and the simulation environment for controlling a mobile robot in the Gazebo simulation environment. To launch the node, please run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch rt2\_assignment1 sim.launch}
+\end{DoxyCode}
+
+
+A\+R\+C\+H\+I\+T\+E\+C\+T\+U\+RE and M\+O\+D\+I\+F\+I\+C\+A\+T\+I\+O\+NS\+:
+
+Now the \mbox{\hyperlink{namespacego__to__point}{go\+\_\+to\+\_\+point}} service is an action service, also we have an action client in the state\+\_\+machine node, which can start the action and delete the current goal (in this way we can stop the robot). The rest of the package is almost unchanged, it can be used the same launcher of the original code.
+
+C\+O\+M\+M\+A\+N\+DS\+:
+
+we can stop immediatly the robot with the command -\/1, or, we can stop it when it reaches the last target with the command 0, (like when \mbox{\hyperlink{namespacego__to__point}{go\+\_\+to\+\_\+point}} was a normal service) for restart the robot just enter the command 1.
+
+We can also see the current state and position of the robot in the feedback of the action service, for doing that just run in the terminal\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rostopic echo /go\_to\_point/feedback}
+\end{DoxyCode}
+
+
+D\+O\+C\+U\+M\+E\+N\+T\+A\+T\+I\+ON\+:
+
+Doxygen documentation and rqt\+\_\+graph in the folder doc of the package 
