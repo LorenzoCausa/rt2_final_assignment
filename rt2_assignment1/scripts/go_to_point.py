@@ -54,6 +54,7 @@ ang_vel = 0.5
 act_s = None
 
 def clbk_odom(msg):
+    """Callback of the subscriber at odom, save the robot positions in global variables"""
     global position_
     global yaw_
 
@@ -71,22 +72,26 @@ def clbk_odom(msg):
 
     
 def clbk_vel(msg):
+    """Callback of the subscriber at velocities, save the velocities in global variables"""
     global lin_vel,ang_vel
     lin_vel=msg.linear.x
     ang_vel=msg.angular.z
 
 
 def change_state(state):
+    """function for changing the state of the robot"""
     global state_
     state_ = state
     print ('State changed to [%s]' % state_)
 
 def normalize_angle(angle):
+    """function for normalize an angle"""
     if(math.fabs(angle) > math.pi):
         angle = angle - (2 * math.pi * angle) / (math.fabs(angle))
     return angle
 
 def fix_yaw(des_pos):
+    """function to direct the robot towards the target (rotation)"""
     desired_yaw = math.atan2(des_pos.y - position_.y, des_pos.x - position_.x)
     err_yaw = normalize_angle(desired_yaw - yaw_)
     rospy.loginfo(err_yaw)
@@ -104,6 +109,7 @@ def fix_yaw(des_pos):
         change_state(1)
 
 def go_straight_ahead(des_pos):
+    """function to move the robot towards the target(translation)"""
     desired_yaw = math.atan2(des_pos.y - position_.y, des_pos.x - position_.x)
     err_yaw = desired_yaw - yaw_
     err_pos = math.sqrt(pow(des_pos.y - position_.y, 2) +
@@ -129,6 +135,7 @@ def go_straight_ahead(des_pos):
         change_state(0)
 
 def fix_final_yaw(des_yaw):
+    """function to adjust the orientation of the robot(rotation)"""
     err_yaw = normalize_angle(des_yaw - yaw_)
     rospy.loginfo(err_yaw)
     twist_msg = Twist()
@@ -145,6 +152,7 @@ def fix_final_yaw(des_yaw):
         change_state(3)
         
 def done():
+    """function that stop the robot"""
     twist_msg = Twist()
     twist_msg.linear.x = 0
     twist_msg.angular.z = 0
@@ -171,7 +179,7 @@ def go_to_point(req):
 """  
 #action server callback
 def go_to_point(goal):
-    """This is the callback of the action server"""
+    """This is the callback of the action server, guide the robot to the goal, if the goal is canceled the robot stops"""
     global act_s, position_ ,yaw_ ,pub_
     desired_position = Point()
     desired_position.x = goal.x
@@ -234,6 +242,7 @@ def go_to_point(goal):
         act_s.set_succeeded(result)    
     
 def main():
+    """main of the go_to_point node"""
     global pub_,act_s
     rospy.init_node('go_to_point')
     pub_ = rospy.Publisher('/cmd_vel', Twist, queue_size=1)

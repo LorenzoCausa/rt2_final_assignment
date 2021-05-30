@@ -34,6 +34,10 @@
 
 bool start = false;
 bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Command::Response &res){
+  /**
+    * callback of the user_interface service,it change the global boolean variable 'start' and allows to cancel the current goal of the go_to_point action
+    */
+
     if (req.command == "start"){
     	start = true;
     }
@@ -51,6 +55,9 @@ bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Com
 
 int main(int argc, char **argv)
 {
+  /**
+   * main of the state_machine node
+   */
    ros::init(argc, argv, "state_machine");
    ros::NodeHandle n;
    ros::ServiceServer service= n.advertiseService("/user_interface", user_interface);
