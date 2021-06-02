@@ -1,6 +1,6 @@
 # Final Assignment of the Research Track 2 course (Robotics Engineering / JEMARO, Unige)
 
-This repository contains the package 'rt2_assignment1' which contains the nodes and the simulation environment for controlling a mobile robot in the Gazebo simulation environment, and the user interface implemented with jupyter for interact with it.
+This repository contains the package "rt2_assignment1" which contains the nodes and the simulation environment for controlling a mobile robot in the Gazebo simulation environment, and the user interface implemented with jupyter for interact with it.
 
 # Ros package rt2_assignment1
 This package is almost the same as the action branch of the previous assignment, it has some small changes but the general behavior is the same.
@@ -27,7 +27,7 @@ Also, it displays graphical information to the user:
 ```
 roslaunch rt2_assignment1 sim.launch
 ```
-2) Open with jupyter lab 'user_interface.ipynb' (it's in the folder notebooks)
+2) Open with jupyter lab "user_interface.ipynb" (it's in the folder notebooks)
 3) Run the kernel (python3) in jupyter 
 4) Now you are ready to play
 
