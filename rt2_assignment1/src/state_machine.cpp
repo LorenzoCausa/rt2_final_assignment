@@ -32,7 +32,8 @@
 #include <actionlib/client/terminal_state.h>
 
 
-bool start = false; /** When true call the position_server and send the goal to the action  */
+/** When true call the position_server and send the goal to the action  */
+bool start = false; 
 
 bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Command::Response &res){
   /**
