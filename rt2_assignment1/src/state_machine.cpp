@@ -32,7 +32,8 @@
 #include <actionlib/client/terminal_state.h>
 
 
-bool start = false;
+bool start = false; /** When true call the position_server and send the goal to the action  */
+
 bool user_interface(rt2_assignment1::Command::Request &req, rt2_assignment1::Command::Response &res){
   /**
     * callback of the user_interface service,it change the global boolean variable 'start' and allows to cancel the current goal of the go_to_point action

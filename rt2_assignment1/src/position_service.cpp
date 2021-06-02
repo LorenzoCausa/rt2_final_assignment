@@ -13,7 +13,7 @@
 *
 * Description :
 *
-* This node compute the random targets
+* This node compute the random targets that the robot will reach
 *
 */
 

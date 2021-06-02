@@ -11,14 +11,18 @@
 #
 #   Subscribes to: <BR>
 #        /odom
+#        /velocities
 #
 #   Publishes to: <BR>
 #        /cmd_vel
 #
 #   Actions : <BR>
 #        /go_to_point
-#       
-
+#          
+# Description:    
+# 
+# This node commands our robot to the target via a ROS action, the angular and linear speeds of the robot can be changed by publishing in the topic /velocities (to which this node is subscribed).
+#
 
 import rospy
 from geometry_msgs.msg import Twist, Point
@@ -31,11 +35,18 @@ import actionlib.msg
 import rt2_assignment1.msg
 
 # robot state variables
+## Contains the current position of the robot (update with a subscriber callback)
 position_ = Point()
-yaw_ = 0
 position_.x = 0
 position_.y = 0
+
+## Contains the yaw of the robot
+yaw_ = 0
+
+## Contains the current state of the robot
 state_ = 0
+
+## Publisher
 pub_ = None
 
 # parameters for control
@@ -47,10 +58,14 @@ kp_d = 0.2
 ub_a = 0.6
 lb_a = -0.5
 ub_d = 0.6
+
+## Linear speed of the robot, can be modified via the callback of the subscriber to /velocities
 lin_vel = 0.3
+
+## Angular speed of the robot, can be modified via the callback of the subscriber to /velocities
 ang_vel = 0.5
 
-#action server
+## action server
 act_s = None
 
 def clbk_odom(msg):
