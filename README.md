@@ -30,5 +30,3 @@ roslaunch rt2_assignment1 sim.launch
 2) Open with jupyter lab "user_interface.ipynb" (it's in the folder notebooks)
 3) Run the kernel (python3) in jupyter 
 4) Now you are ready to play
-
-AGGIUNGI DOCUMENTAZIONE
