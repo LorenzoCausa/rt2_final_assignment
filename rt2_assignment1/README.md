@@ -24,4 +24,4 @@ We can also see the current state and position of the robot in the feedback of t
 rostopic echo /go_to_point/feedback
 ```
 # Documentation:
-Doxygen documentation and rqt_graph in the folder doc of the package
+documentation and rqt_graph in the folder doc of the package
