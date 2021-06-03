@@ -31,4 +31,3 @@ roslaunch rt2_assignment1 sim.launch
 3) Run the kernel (python3) in jupyter 
 4) Now you are ready to play
 
-AGGIUNGI DOCUMENTAZIONE
