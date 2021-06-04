@@ -1,28 +1,28 @@
 #! /usr/bin/env python
 
-## @package rt2_assignment1
-#   \file go_to_point.py
-#   \brief This node implement the go_to_point action
-#   \author lorenzo Causa
-#   \version 1.0
-#   \date 28/05/2021
-#
-#   \details
-#
-#   Subscribes to: <BR>
-#        /odom
-#        /velocities
-#
-#   Publishes to: <BR>
-#        /cmd_vel
-#
-#   Actions : <BR>
-#        /go_to_point
-#          
-# Description:    
-# 
-# This node commands our robot to the target via a ROS action, the angular and linear speeds of the robot can be changed by publishing in the topic /velocities (to which this node is subscribed).
-#
+"""
+.. module:: go_to_point
+    :synopsis: Python module for the go_to_point action
+.. moduleauthor:: Causa Lorenzo
+
+Subscribes to: 
+
+/odom :topic where the simulator publishes the robot position
+
+/velocities :topic where the jupyter node publishes the angular and linear speeds
+
+Publishes to:
+
+/cmd_vel :the desired robot position
+
+Actions : 
+
+/go_to_point :o start the robot motion
+          
+Description:    
+This node commands our robot to the target via a ROS action, the angular and linear speeds of the robot can be changed by publishing in the topic /velocities (to which this node is subscribed).
+
+"""
 
 import rospy
 from geometry_msgs.msg import Twist, Point
@@ -35,19 +35,19 @@ import actionlib.msg
 import rt2_assignment1.msg
 
 # robot state variables
-## Contains the current position of the robot (update with a subscriber callback)
 position_ = Point()
+""" Contains the current position of the robot (update with a subscriber callback)"""
 position_.x = 0
 position_.y = 0
 
-## Contains the yaw of the robot
 yaw_ = 0
+""" Contains the yaw of the robot"""
 
-## Contains the current state of the robot
 state_ = 0
+""" Contains the current state of the robot"""
 
-## Publisher
 pub_ = None
+""" Publisher"""
 
 # parameters for control
 yaw_precision_ = math.pi / 9  # +/- 20 degree allowed
@@ -59,11 +59,12 @@ ub_a = 0.6
 lb_a = -0.5
 ub_d = 0.6
 
-## Linear speed of the robot, can be modified via the callback of the subscriber to /velocities
-lin_vel = 0.3
 
-## Angular speed of the robot, can be modified via the callback of the subscriber to /velocities
+lin_vel = 0.3
+""" Linear speed of the robot, can be modified via the callback of the subscriber to /velocities """
+
 ang_vel = 0.5
+""" Angular speed of the robot, can be modified via the callback of the subscriber to /velocities"""
 
 ## action server
 act_s = None

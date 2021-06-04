@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="position__service_8cpp" kind="file"><name>position_service.cpp</name>
+    <member refid="position__service_8cpp_1a10f83119b77a8fbd085a5550955f85ff" kind="function"><name>randMToN</name></member>
+    <member refid="position__service_8cpp_1ab65b9ff5368189ad34fe4989d50742e4" kind="function"><name>myrandom</name></member>
+    <member refid="position__service_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="state__machine_8cpp" kind="file"><name>state_machine.cpp</name>
+    <member refid="state__machine_8cpp_1ab376b87f96a574a793c03c53e75afec8" kind="variable"><name>start</name></member>
+    <member refid="state__machine_8cpp_1a1a9543636935547580c0657f4c7c0c2b" kind="function"><name>user_interface</name></member>
+    <member refid="state__machine_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

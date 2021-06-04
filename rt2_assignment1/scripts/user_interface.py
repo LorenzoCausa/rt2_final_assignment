@@ -1,15 +1,12 @@
-## @package rt2_assignment1
-#   \file user_interface.py
-#   \brief This node implement the interface to the user
-#   \author lorenzo Causa
-#   \version 1.0
-#   \date 28/05/2021
-#
-#   \details
-#
-#   Clients : <BR>
-#        /user_interface
-#   
+"""
+.. module:: user_interface
+    :synopsis: Python module for the user Interface
+.. moduleauthor:: Causa Lorenzo
+
+Clients : 
+/user_interface
+
+"""  
 
 import rospy
 import time
