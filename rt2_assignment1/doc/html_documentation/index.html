@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Welcome to RT assignment’s documentation! &mdash; RT assignment final assignment version documentation</title>
+  <title>Indices and tables &mdash; RT assignment final assignment version documentation</title>
   
 
   
@@ -88,15 +88,14 @@
             
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to RT assignment’s documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a><ul>
+<li><a class="reference internal" href="#">Indices and tables</a><ul>
 <li><a class="reference internal" href="#rt2-assignment1-s-documentation">Rt2_assignment1’s documentation!</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#module-scripts.user_interface">User Interface Module</a></li>
+<li><a class="reference internal" href="#module-scripts.user_interface">User Interface Module (not used)</a></li>
 <li><a class="reference internal" href="#module-scripts.go_to_point">GoToPoint Module</a></li>
 <li><a class="reference internal" href="#position-service">Position Service</a></li>
-<li><a class="reference internal" href="#state-machine">State machine</a></li>
+<li><a class="reference internal" href="#state-machine">State Machine</a></li>
 </ul>
 </div>
             
@@ -145,7 +144,7 @@
     
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Welcome to RT assignment’s documentation!</li>
+      <li>Indices and tables</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -164,10 +163,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-rt-assignment-s-documentation">
-<h1>Welcome to RT assignment’s documentation!<a class="headerlink" href="#welcome-to-rt-assignment-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="toctree-wrapper compound">
 </div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
@@ -182,7 +178,7 @@
 </div>
 </div>
 <div class="section" id="module-scripts.user_interface">
-<span id="user-interface-module"></span><h1>User Interface Module<a class="headerlink" href="#module-scripts.user_interface" title="Permalink to this headline">¶</a></h1>
+<span id="user-interface-module-not-used"></span><h1>User Interface Module (not used)<a class="headerlink" href="#module-scripts.user_interface" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-user_interface"></span><p>Clients :
 /user_interface</p>
 <dl class="py function">
@@ -321,12 +317,28 @@ This node commands our robot to the target via a ROS action, the angular and lin
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv48randMToNdd">
 <span id="_CPPv38randMToNdd"></span><span id="_CPPv28randMToNdd"></span><span id="randMToN__double.double"></span><span class="target" id="position__service_8cpp_1a10f83119b77a8fbd085a5550955f85ff"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">randMToN</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">M</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">N</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48randMToNdd" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>random number generator </p>
+<p>
+function that compute a random number between ‘M’ and ‘N’ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> – minimum value of the random number </p></li>
+<li><p><strong>N</strong> – max value of the random number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the random number</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv48myrandomRN15rt2_assignment114RandomPosition7RequestERN15rt2_assignment114RandomPosition8ResponseE">
 <span id="_CPPv38myrandomRN15rt2_assignment114RandomPosition7RequestERN15rt2_assignment114RandomPosition8ResponseE"></span><span id="_CPPv28myrandomRN15rt2_assignment114RandomPosition7RequestERN15rt2_assignment114RandomPosition8ResponseE"></span><span id="myrandom__rt2_assignment1::RandomPosition::RequestR.rt2_assignment1::RandomPosition::ResponseR"></span><span class="target" id="position__service_8cpp_1ab65b9ff5368189ad34fe4989d50742e4"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">myrandom</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">rt2_assignment1</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">RandomPosition</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Request</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span>, <span class="n"><span class="pre">rt2_assignment1</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">RandomPosition</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Response</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48myrandomRN15rt2_assignment114RandomPosition7RequestERN15rt2_assignment114RandomPosition8ResponseE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>server callback </p>
+<p>callback of the position_server service,it returns 2 radom position (X and Y) and a random orientation (theta) </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv44mainiPPc">
@@ -336,7 +348,7 @@ This node commands our robot to the target via a ROS action, the angular and lin
 </div>
 </div>
 <div class="section" id="state-machine">
-<h1>State machine<a class="headerlink" href="#state-machine" title="Permalink to this headline">¶</a></h1>
+<h1>State Machine<a class="headerlink" href="#state-machine" title="Permalink to this headline">¶</a></h1>
 <p>This file is the state_machine node. </p>
 <p><p>Services :</p>
 <p>°/user_interface</p>
@@ -362,7 +374,9 @@ This node commands our robot to the target via a ROS action, the angular and lin
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv414user_interfaceRN15rt2_assignment17Command7RequestERN15rt2_assignment17Command8ResponseE">
 <span id="_CPPv314user_interfaceRN15rt2_assignment17Command7RequestERN15rt2_assignment17Command8ResponseE"></span><span id="_CPPv214user_interfaceRN15rt2_assignment17Command7RequestERN15rt2_assignment17Command8ResponseE"></span><span id="user_interface__rt2_assignment1::Command::RequestR.rt2_assignment1::Command::ResponseR"></span><span class="target" id="state__machine_8cpp_1a1a9543636935547580c0657f4c7c0c2b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">user_interface</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">rt2_assignment1</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Command</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Request</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span>, <span class="n"><span class="pre">rt2_assignment1</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Command</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Response</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414user_interfaceRN15rt2_assignment17Command7RequestERN15rt2_assignment17Command8ResponseE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>state_machine node </p>
+<p>callback of the user_interface service,it change the global boolean variable ‘start’ and allows to cancel the current goal of the go_to_point action </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp">
@@ -391,7 +405,7 @@ This node commands our robot to the target via a ROS action, the angular and lin
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, Causa Lorenzo.
+        &#169; Copyright 2021, Lorenzo Causa.
 
     </p>
   </div>

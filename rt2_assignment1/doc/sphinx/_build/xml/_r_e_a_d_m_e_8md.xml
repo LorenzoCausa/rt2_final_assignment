@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>First<sp/>Assignment<sp/>of<sp/>the<sp/>Research<sp/>Track<sp/>2<sp/>course<sp/>(Robotics<sp/>Engineering<sp/>/<sp/>JEMARO,<sp/>Unige)</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Action<sp/>Branch<sp/>(final<sp/>assignment<sp/>version)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>package<sp/>contains<sp/>the<sp/>nodes<sp/>and<sp/>the<sp/>simulation<sp/>environment<sp/>for<sp/>controlling<sp/>a<sp/>mobile<sp/>robot<sp/>in<sp/>the<sp/>Gazebo<sp/>simulation<sp/>environment.</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>launch<sp/>the<sp/>node,<sp/>please<sp/>run:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>rt2_assignment1<sp/>sim.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>version<sp/>for<sp/>the<sp/>assignment<sp/>2<sp/>of<sp/>RT2<sp/>which<sp/>means<sp/>that<sp/>the<sp/>User<sp/>Interface<sp/>will<sp/>not<sp/>be<sp/>runned<sp/>from<sp/>here<sp/>becouse<sp/>will<sp/>be<sp/>implemented<sp/>with<sp/>jupyter.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Architecture<sp/>and<sp/>Modifications:</highlight></codeline>
+<codeline><highlight class="normal">Now<sp/>the<sp/>go_to_point<sp/>service<sp/>is<sp/>an<sp/>action<sp/>service,<sp/>also<sp/>we<sp/>have<sp/>an<sp/>action<sp/>client<sp/>in<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal">state_machine<sp/>node,<sp/>which<sp/>can<sp/>start<sp/>the<sp/>action<sp/>and<sp/>delete<sp/>the<sp/>current<sp/>goal<sp/>(in<sp/>this<sp/>way<sp/>we<sp/>can<sp/>stop<sp/>the<sp/>robot).</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>rest<sp/>of<sp/>the<sp/>package<sp/>is<sp/>almost<sp/>unchanged,<sp/>it<sp/>can<sp/>be<sp/>used<sp/>the<sp/>same<sp/>launcher<sp/>of<sp/>the<sp/>original<sp/>code.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>this<sp/>version<sp/>(final<sp/>assignment<sp/>version)<sp/>a<sp/>subscriber<sp/>has<sp/>also<sp/>been<sp/>added<sp/>to<sp/>the<sp/>topic<sp/>/velocities<sp/>in<sp/>the<sp/>go_to_point<sp/>node,</highlight></codeline>
+<codeline><highlight class="normal">with<sp/>this<sp/>topic<sp/>we<sp/>can<sp/>set<sp/>the<sp/>angular<sp/>and<sp/>linear<sp/>speeds<sp/>of<sp/>the<sp/>robot.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>User<sp/>Interface:</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>user<sp/>interface<sp/>is<sp/>now<sp/>on<sp/>jupyter,<sp/>all<sp/>the<sp/>commands<sp/>can<sp/>be<sp/>sent<sp/>from<sp/>there</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>can<sp/>also<sp/>see<sp/>the<sp/>current<sp/>state<sp/>and<sp/>position<sp/>of<sp/>the<sp/>robot<sp/>in<sp/>the<sp/>feedback<sp/>of<sp/>the<sp/>action<sp/>service,<sp/>for<sp/>doing<sp/>that<sp/>just<sp/>run<sp/>in<sp/>the<sp/>terminal:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">rostopic<sp/>echo<sp/>/go_to_point/feedback</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Documentation:</highlight></codeline>
+<codeline><highlight class="normal">documentation<sp/>and<sp/>rqt_graph<sp/>in<sp/>the<sp/>folder<sp/>doc<sp/>of<sp/>the<sp/>package</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

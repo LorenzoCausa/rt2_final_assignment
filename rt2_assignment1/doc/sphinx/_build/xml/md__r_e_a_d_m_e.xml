@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md__r_e_a_d_m_e" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>First Assignment of the Research Track 2 course (Robotics Engineering / JEMARO, Unige)</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md1">
+<title>Action Branch (final assignment version)</title>
+<para>The package contains the nodes and the simulation environment for controlling a mobile robot in the Gazebo simulation environment. To launch the node, please run: <programlisting><codeline><highlight class="normal">roslaunch<sp/>rt2_assignment1<sp/>sim.launch</highlight></codeline>
+</programlisting></para>
+<para>This is version for the assignment 2 of RT2 which means that the User Interface will not be runned from here becouse will be implemented with jupyter.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md2">
+<title>Architecture and Modifications:</title>
+<para>Now the <ref refid="namespacego__to__point" kindref="compound">go_to_point</ref> service is an action service, also we have an action client in the state_machine node, which can start the action and delete the current goal (in this way we can stop the robot). The rest of the package is almost unchanged, it can be used the same launcher of the original code.</para>
+<para>For this version (final assignment version) a subscriber has also been added to the topic /velocities in the <ref refid="namespacego__to__point" kindref="compound">go_to_point</ref> node, with this topic we can set the angular and linear speeds of the robot.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md3">
+<title>User Interface:</title>
+<para>The user interface is now on jupyter, all the commands can be sent from there</para>
+<para>We can also see the current state and position of the robot in the feedback of the action service, for doing that just run in the terminal: <programlisting><codeline><highlight class="normal">rostopic<sp/>echo<sp/>/go_to_point/feedback</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md4">
+<title>Documentation:</title>
+<para>documentation and rqt_graph in the folder doc of the package </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

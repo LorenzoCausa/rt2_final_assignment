@@ -14,14 +14,14 @@ import os
 import subprocess
 import sys
 sys.path.insert(0, os.path.abspath('.'))
-
 subprocess.call('doxygen Doxyfile.in', shell=True)
+
 
 # -- Project information -----------------------------------------------------
 
 project = 'RT assignment'
-copyright = '2021, Causa Lorenzo'
-author = 'Causa Lorenzo'
+copyright = '2021, Lorenzo Causa'
+author = 'Lorenzo Causa'
 
 # The full version, including alpha/beta/rc tags
 release = 'final assignment version'
@@ -33,18 +33,18 @@ release = 'final assignment version'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
-    'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.ifconfig',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages',
-    "sphinx.ext.napoleon",
-    'sphinx.ext.inheritance_diagram',
-    'breathe'
+'sphinx.ext.autodoc',
+'sphinx.ext.doctest',
+'sphinx.ext.intersphinx',
+'sphinx.ext.todo',
+'sphinx.ext.coverage',
+'sphinx.ext.mathjax',
+'sphinx.ext.ifconfig',
+'sphinx.ext.viewcode',
+'sphinx.ext.githubpages',
+"sphinx.ext.napoleon",
+'sphinx.ext.inheritance_diagram',
+'breathe'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

@@ -20,19 +20,29 @@
 #include "ros/ros.h"
 #include "rt2_assignment1/RandomPosition.h"
 
+/**
+ * \brief random number generator
+ * \param M minimum value of the random number
+ * \param N max value of the random number
+ * 
+ * \return the random number
+ * 
+ * function that compute a random number between 'M' and 'N'
+ */
 
 double randMToN(double M, double N)
- { /**
-    * function that compute a random number between 'M' and 'N'
-    */
+ { 
     return M + (rand() / ( RAND_MAX / (N-M) ) ) ;
  }
 
+/**
+ * \brief server callback
+ * 
+ * callback of the position_server service,it returns 2 radom position (X and Y) and a random orientation (theta)
+ */
 
 bool myrandom (rt2_assignment1::RandomPosition::Request &req, rt2_assignment1::RandomPosition::Response &res){
-   /**
-    * callback of the position_server service,it returns 2 radom position (X and Y) and a random orientation (theta)
-    */
+   
     res.x = randMToN(req.x_min, req.x_max);
     res.y = randMToN(req.y_min, req.y_max);
     res.theta = randMToN(-3.14, 3.14);
